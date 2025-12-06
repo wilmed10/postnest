@@ -27,12 +27,14 @@ export class CategoriesController {
   }
 
   @Get(':id')
-  findOne(@Param(IdValidationPipe) id: string) {
+  findOne(@Param('id', IdValidationPipe) id: string) {
     return this.categoriesService.findOne(+id);
   }
 
   @Patch(':id')
-  update(@Param('id', IdValidationPipe) id: string, @Body() updateCategoryDto: UpdateCategoryDto,
+  update(
+    @Param('id', IdValidationPipe) id: string, 
+    @Body() updateCategoryDto: UpdateCategoryDto,
   ) {
     return this.categoriesService.update(+id, updateCategoryDto);
   }
