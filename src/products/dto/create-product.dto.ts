@@ -11,7 +11,7 @@ export class CreateProductDto {
 
     @IsNotEmpty({message: 'La cantidad no puede ser vacia'})
     @IsNumber({maxDecimalPlaces: 2}, {message: 'Cantidad no válida'})
-    inventory : 200
+    inventory : number
 
     @IsNotEmpty({message: 'La categoria es obligatoria'})
     @IsInt({message: 'La categoría no es válida'})
